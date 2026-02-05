@@ -62,7 +62,20 @@ export const buyerLogin = async (payload: BuyerLoginPayload): Promise<AuthRespon
     }
     throw new Error(response.data?.message || 'Login failed');
   } catch (error: any) {
-    const message = error.response?.data?.message || error.message || 'Login failed';
+    let message = 'Login failed. Please try again.';
+    
+    if (error.response?.status === 401) {
+      message = 'Invalid email or password. Please check your credentials.';
+    } else if (error.response?.status === 400) {
+      message = error.response?.data?.message || 'Please enter valid email and password.';
+    } else if (error.response?.status === 500) {
+      message = 'Server error. Please try again later.';
+    } else if (error.message === 'Network Error' || !error.response) {
+      message = 'Cannot connect to server. Please check your internet connection.';
+    } else {
+      message = error.response?.data?.message || error.message || 'Login failed. Please try again.';
+    }
+    
     throw new Error(message);
   }
 };
@@ -90,7 +103,20 @@ export const supplierLogin = async (payload: SupplierLoginPayload): Promise<Auth
     }
     throw new Error(response.data?.message || 'Login failed');
   } catch (error: any) {
-    const message = error.response?.data?.message || error.message || 'Login failed';
+    let message = 'Login failed. Please try again.';
+    
+    if (error.response?.status === 401) {
+      message = 'Invalid email or password. Please check your credentials.';
+    } else if (error.response?.status === 400) {
+      message = error.response?.data?.message || 'Please enter valid email and password.';
+    } else if (error.response?.status === 500) {
+      message = 'Server error. Please try again later.';
+    } else if (error.message === 'Network Error' || !error.response) {
+      message = 'Cannot connect to server. Please check your internet connection.';
+    } else {
+      message = error.response?.data?.message || error.message || 'Login failed. Please try again.';
+    }
+    
     throw new Error(message);
   }
 };
