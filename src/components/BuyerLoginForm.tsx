@@ -6,13 +6,56 @@ import { useLogin } from '../hooks/useLogin';
 export const BuyerLoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const navigate = useNavigate();
   const { state } = useAuth();
   const loginMutation = useLogin();
 
+  const validateForm = (): boolean => {
+    const errors: Record<string, string> = {};
+
+    // Email validation
+    if (!email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+
+    // Password validation
+    if (!password) {
+      errors.password = 'Password is required';
+    } else if (password.length < 6) {
+      errors.password = 'Password must be at least 6 characters';
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate before submitting
+    if (!validateForm()) {
+      return;
+    }
+
     loginMutation.mutate({ email, password, role: 'BUYER' });
+  };
+
+  // Clear validation error when user types
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    if (validationErrors.email) {
+      setValidationErrors(prev => ({ ...prev, email: '' }));
+    }
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    if (validationErrors.password) {
+      setValidationErrors(prev => ({ ...prev, password: '' }));
+    }
   };
 
   // Navigate on successful login
@@ -36,11 +79,16 @@ export const BuyerLoginForm: React.FC = () => {
           id="buyer-email"
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmailChange}
           placeholder="your@email.com"
           required
-          className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+          className={`mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none ${
+            validationErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+          }`}
         />
+        {validationErrors.email && (
+          <p className="text-red-600 text-sm mt-1">{validationErrors.email}</p>
+        )}
       </div>
 
       <div>
@@ -51,11 +99,16 @@ export const BuyerLoginForm: React.FC = () => {
           id="buyer-password"
           type="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handlePasswordChange}
           placeholder="••••••••"
           required
-          className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+          className={`mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none ${
+            validationErrors.password ? 'border-red-500 bg-red-50' : 'border-gray-300'
+          }`}
         />
+        {validationErrors.password && (
+          <p className="text-red-600 text-sm mt-1">{validationErrors.password}</p>
+        )}
       </div>
 
       {errorMessage && (
@@ -72,8 +125,8 @@ export const BuyerLoginForm: React.FC = () => {
 
       <button
         type="submit"
-        disabled={loginMutation.isPending}
-        className="w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
+        disabled={loginMutation.isPending || Object.keys(validationErrors).length > 0}
+        className="w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
       >
         {loginMutation.isPending ? 'Logging in...' : 'Login as Buyer'}
       </button>
