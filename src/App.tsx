@@ -1,26 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { BuyerLayout } from './components/buyer/BuyerLayout';
+import { queryClient } from './config/queryClient';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
-import { queryClient } from './config/queryClient';
-import { LoginPage } from './pages/LoginPage';
-import { BuyerLayout } from './components/buyer/BuyerLayout';
-import { SearchPage } from './pages/buyer/SearchPage';
-import { SupplierDetailPage } from './pages/buyer/SupplierDetailPage';
 import { CartPage } from './pages/buyer/CartPage';
 import { OrdersPage } from './pages/buyer/OrdersPage';
-import SupplierDashboardPage from './pages/supplier/DashboardPage';
-import ProductsPage from './pages/supplier/ProductsPage';
+import { SearchPage } from './pages/buyer/SearchPage';
+import { SupplierDetailPage } from './pages/buyer/SupplierDetailPage';
+import { LoginPage } from './pages/LoginPage';
 import AddProductPage from './pages/supplier/AddProductPage';
-import OrdersPageSupplier from './pages/supplier/OrdersPage';
+import SupplierDashboardPage from './pages/supplier/DashboardPage';
 import DiscountsPage from './pages/supplier/DiscountsPage';
+import OrdersPageSupplier from './pages/supplier/OrdersPage';
+import ProductsPage from './pages/supplier/ProductsPage';
 import ProfilePage from './pages/supplier/ProfilePage';
 
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router basename="/marketplace-b2b">
+      <Router>
         <AuthProvider>
           <CartProvider>
           <Routes>
