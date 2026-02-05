@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLogin } from '../hooks/useLogin';
@@ -43,19 +43,35 @@ export const SupplierLoginForm: React.FC = () => {
     loginMutation.mutate({ email, password, role: 'SUPPLIER' });
   };
 
-  // Clear validation error when user types
+  // Validate in real-time as user types
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    if (validationErrors.email) {
-      setValidationErrors(prev => ({ ...prev, email: '' }));
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    
+    const errors = { ...validationErrors };
+    if (!newEmail.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail)) {
+      errors.email = 'Please enter a valid email address';
+    } else {
+      delete errors.email;
     }
+    setValidationErrors(errors);
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-    if (validationErrors.password) {
-      setValidationErrors(prev => ({ ...prev, password: '' }));
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    
+    const errors = { ...validationErrors };
+    if (!newPassword) {
+      errors.password = 'Password is required';
+    } else if (newPassword.length < 6) {
+      errors.password = 'Password must be at least 6 characters';
+    } else {
+      delete errors.password;
     }
+    setValidationErrors(errors);
   };
 
   // Navigate on successful login
@@ -92,12 +108,19 @@ export const SupplierLoginForm: React.FC = () => {
           onChange={handleEmailChange}
           placeholder="your@business.com"
           required
-          className={`mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none ${
-            validationErrors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+          className={`mt-1 w-full px-4 py-2 border-2 rounded-md outline-none transition-all ${
+            validationErrors.email
+              ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300 focus:border-red-400'
+              : 'border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500'
           }`}
         />
         {validationErrors.email && (
-          <p className="text-red-600 text-sm mt-1">{validationErrors.email}</p>
+          <div className="mt-2 flex items-start gap-2">
+            <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            <p className="text-red-600 text-sm">{validationErrors.email}</p>
+          </div>
         )}
       </div>
 
@@ -112,12 +135,19 @@ export const SupplierLoginForm: React.FC = () => {
           onChange={handlePasswordChange}
           placeholder="••••••••"
           required
-          className={`mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none ${
-            validationErrors.password ? 'border-red-500 bg-red-50' : 'border-gray-300'
+          className={`mt-1 w-full px-4 py-2 border-2 rounded-md outline-none transition-all ${
+            validationErrors.password
+              ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300 focus:border-red-400'
+              : 'border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500'
           }`}
         />
         {validationErrors.password && (
-          <p className="text-red-600 text-sm mt-1">{validationErrors.password}</p>
+          <div className="mt-2 flex items-start gap-2">
+            <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            <p className="text-red-600 text-sm">{validationErrors.password}</p>
+          </div>
         )}
       </div>
 
