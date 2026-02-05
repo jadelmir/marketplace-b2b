@@ -1,0 +1,390 @@
+{
+  "categories": [
+    {
+      "id": "meat",
+      "name": "Meat & Poultry",
+      "icon": "🥩",
+      "image": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "beef",
+          "name": "Beef",
+          "icon": "🐄",
+          "image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=300&q=80"
+        },
+        {
+          "id": "pork",
+          "name": "Pork",
+          "icon": "🐷",
+          "image": "https://images.unsplash.com/photo-1562312141-7c11a0e89b80?w=300&q=80"
+        },
+        {
+          "id": "chicken",
+          "name": "Chicken",
+          "icon": "🍗",
+          "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=300&q=80"
+        },
+        {
+          "id": "lamb",
+          "name": "Lamb",
+          "icon": "🐑",
+          "image": "https://images.unsplash.com/photo-1626082927389-6cd097cda1ec?w=300&q=80"
+        },
+        {
+          "id": "turkey",
+          "name": "Turkey",
+          "icon": "🦃",
+          "image": "https://images.unsplash.com/photo-1618164436241-4473940571cd?w=300&q=80"
+        },
+        {
+          "id": "processed",
+          "name": "Processed Meat",
+          "icon": "🌭",
+          "image": "https://images.unsplash.com/photo-1611003228941-98852ba62227?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "seafood",
+      "name": "Seafood",
+      "icon": "🐟",
+      "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "fish",
+          "name": "Fresh Fish",
+          "icon": "🐠",
+          "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=300&q=80"
+        },
+        {
+          "id": "shellfish",
+          "name": "Shellfish",
+          "icon": "🦪",
+          "image": "https://images.unsplash.com/photo-1618164436241-4473940571cd?w=300&q=80"
+        },
+        {
+          "id": "shrimp",
+          "name": "Shrimp & Prawns",
+          "icon": "🦐",
+          "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=300&q=80"
+        },
+        {
+          "id": "squid",
+          "name": "Squid & Octopus",
+          "icon": "🐙",
+          "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=300&q=80"
+        },
+        {
+          "id": "frozen",
+          "name": "Frozen Seafood",
+          "icon": "❄️",
+          "image": "https://images.unsplash.com/photo-1612665503154-3f6ad0b5c5da?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "vegetables",
+      "name": "Vegetables",
+      "icon": "🥬",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "fresh",
+          "name": "Fresh Vegetables",
+          "icon": "🥕",
+          "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&q=80"
+        },
+        {
+          "id": "leafy",
+          "name": "Leafy Greens",
+          "icon": "🥗",
+          "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=300&q=80"
+        },
+        {
+          "id": "root",
+          "name": "Root Vegetables",
+          "icon": "🥔",
+          "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=300&q=80"
+        },
+        {
+          "id": "frozen",
+          "name": "Frozen Vegetables",
+          "icon": "❄️",
+          "image": "https://images.unsplash.com/photo-1612665503154-3f6ad0b5c5da?w=300&q=80"
+        },
+        {
+          "id": "organic",
+          "name": "Organic Vegetables",
+          "icon": "🌱",
+          "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "fruits",
+      "name": "Fruits",
+      "icon": "🍎",
+      "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "citrus",
+          "name": "Citrus",
+          "icon": "🍊",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "berries",
+          "name": "Berries",
+          "icon": "🫐",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "tropical",
+          "name": "Tropical Fruits",
+          "icon": "🥭",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "stone",
+          "name": "Stone Fruits",
+          "icon": "🍑",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "organic",
+          "name": "Organic Fruits",
+          "icon": "🌱",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "dairy",
+      "name": "Dairy & Cheese",
+      "icon": "🧀",
+      "image": "https://images.unsplash.com/photo-1589985644285-fed2d3a1f9f4?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "cheese",
+          "name": "Cheese",
+          "icon": "🧀",
+          "image": "https://images.unsplash.com/photo-1589985644285-fed2d3a1f9f4?w=300&q=80"
+        },
+        {
+          "id": "milk",
+          "name": "Milk",
+          "icon": "🥛",
+          "image": "https://images.unsplash.com/photo-1585288923771-9ffe04a941fa?w=300&q=80"
+        },
+        {
+          "id": "yogurt",
+          "name": "Yogurt",
+          "icon": "🥣",
+          "image": "https://images.unsplash.com/photo-1542181286-d2d1f08dfe73?w=300&q=80"
+        },
+        {
+          "id": "butter",
+          "name": "Butter & Cream",
+          "icon": "🧈",
+          "image": "https://images.unsplash.com/photo-1585288923771-9ffe04a941fa?w=300&q=80"
+        },
+        {
+          "id": "other",
+          "name": "Other Dairy",
+          "icon": "🥛",
+          "image": "https://images.unsplash.com/photo-1542181286-d2d1f08dfe73?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "grains",
+      "name": "Grains & Cereals",
+      "icon": "🌾",
+      "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "rice",
+          "name": "Rice",
+          "icon": "🍚",
+          "image": "https://images.unsplash.com/photo-1586985289688-cacf884ca199?w=300&q=80"
+        },
+        {
+          "id": "wheat",
+          "name": "Wheat",
+          "icon": "🌾",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "pasta",
+          "name": "Pasta",
+          "icon": "🍝",
+          "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&q=80"
+        },
+        {
+          "id": "flour",
+          "name": "Flour & Meal",
+          "icon": "💪",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "other",
+          "name": "Other Grains",
+          "icon": "🌾",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "oils",
+      "name": "Oils & Condiments",
+      "icon": "🍯",
+      "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "olive",
+          "name": "Olive Oil",
+          "icon": "🫒",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "cooking",
+          "name": "Cooking Oil",
+          "icon": "🍳",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "vinegar",
+          "name": "Vinegar",
+          "icon": "🍶",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "sauces",
+          "name": "Sauces & Pastes",
+          "icon": "🍲",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "spices",
+          "name": "Spices & Seasonings",
+          "icon": "🌶️",
+          "image": "https://images.unsplash.com/photo-1596040599857-f9a4247d8b46?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "baking",
+      "name": "Baking & Desserts",
+      "icon": "🎂",
+      "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "flour",
+          "name": "Flour & Baking Mix",
+          "icon": "💪",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "sugar",
+          "name": "Sugar & Sweeteners",
+          "icon": "🍯",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "chocolate",
+          "name": "Chocolate & Cocoa",
+          "icon": "🍫",
+          "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&q=80"
+        },
+        {
+          "id": "yeast",
+          "name": "Yeast & Leavening",
+          "icon": "🧬",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "decorations",
+          "name": "Baking Decorations",
+          "icon": "✨",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "beverages",
+      "name": "Beverages",
+      "icon": "🥤",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "coffee",
+          "name": "Coffee",
+          "icon": "☕",
+          "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b3f7?w=300&q=80"
+        },
+        {
+          "id": "tea",
+          "name": "Tea",
+          "icon": "🫖",
+          "image": "https://images.unsplash.com/photo-1597318972474-a0e4e5b62c00?w=300&q=80"
+        },
+        {
+          "id": "juice",
+          "name": "Juice",
+          "icon": "🧃",
+          "image": "https://images.unsplash.com/photo-1508270941620-7e0e60b87b20?w=300&q=80"
+        },
+        {
+          "id": "water",
+          "name": "Water & Drinks",
+          "icon": "💧",
+          "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&q=80"
+        },
+        {
+          "id": "alcohol",
+          "name": "Alcohol",
+          "icon": "🍷",
+          "image": "https://images.unsplash.com/photo-1510812431401-41d2cab2707d?w=300&q=80"
+        }
+      ]
+    },
+    {
+      "id": "frozen",
+      "name": "Frozen Foods",
+      "icon": "❄️",
+      "image": "https://images.unsplash.com/photo-1612665503154-3f6ad0b5c5da?w=500&q=80",
+      "subcategories": [
+        {
+          "id": "ready-meals",
+          "name": "Ready Meals",
+          "icon": "🍱",
+          "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=80"
+        },
+        {
+          "id": "vegetables",
+          "name": "Frozen Vegetables",
+          "icon": "🥕",
+          "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&q=80"
+        },
+        {
+          "id": "fruits",
+          "name": "Frozen Fruits",
+          "icon": "🍓",
+          "image": "https://images.unsplash.com/photo-1599599810694-3d6b4c5c9a95?w=300&q=80"
+        },
+        {
+          "id": "desserts",
+          "name": "Frozen Desserts",
+          "icon": "🍦",
+          "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=300&q=80"
+        },
+        {
+          "id": "other",
+          "name": "Other Frozen",
+          "icon": "❄️",
+          "image": "https://images.unsplash.com/photo-1612665503154-3f6ad0b5c5da?w=300&q=80"
+        }
+      ]
+    }
+  ]
+}
