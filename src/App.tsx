@@ -20,7 +20,7 @@ import ProfilePage from './pages/supplier/ProfilePage';
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <Router basename="/marketplace-b2b/">
         <AuthProvider>
           <CartProvider>
           <Routes>
