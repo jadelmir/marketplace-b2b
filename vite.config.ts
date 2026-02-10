@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/marketplace-b2b/',
   plugins: [react()],
   server: {
     port: 3000,
