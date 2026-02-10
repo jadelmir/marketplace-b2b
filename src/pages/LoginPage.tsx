@@ -14,7 +14,7 @@ export const LoginPage: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            B2B Marketplace
+            B2B Marketplace 2
           </h1>
           <p className="text-lg text-gray-600">
             Connect restaurants with suppliers
