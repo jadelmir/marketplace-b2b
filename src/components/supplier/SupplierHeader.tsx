@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { SupplierUser } from '../../types';
 
 interface SupplierHeaderProps {
@@ -8,6 +9,7 @@ interface SupplierHeaderProps {
 
 const SupplierHeader: React.FC<SupplierHeaderProps> = ({ supplier, onMenuClick }) => {
   const [showProfileMenu, setShowProfileMenu] = React.useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center">
@@ -76,22 +78,22 @@ const SupplierHeader: React.FC<SupplierHeaderProps> = ({ supplier, onMenuClick }
           {/* Dropdown Menu */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
-              <a
-                href="/supplier/profile"
+              <Link
+                to="/supplier/profile"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
               >
                 Profile Settings
-              </a>
-              <a
-                href="/supplier/login"
+              </Link>
+              <button
                 onClick={() => {
                   localStorage.removeItem('supplierAuth');
                   localStorage.removeItem('supplierId');
+                  navigate('/supplier/login');
                 }}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-t border-gray-200"
+                className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 border-t border-gray-200"
               >
                 Logout
-              </a>
+              </button>
             </div>
           )}
         </div>

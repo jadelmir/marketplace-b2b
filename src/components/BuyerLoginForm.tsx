@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLogin } from '../hooks/useLogin';
 
@@ -163,9 +163,9 @@ export const BuyerLoginForm: React.FC = () => {
 
       <p className="text-center text-sm text-gray-600">
         Don't have an account?{' '}
-        <a href="/register" className="text-blue-600 hover:text-blue-700 font-medium">
+        <Link to="/register" className="text-blue-600 hover:text-blue-700 font-medium">
           Sign up
-        </a>
+        </Link>
       </p>
     </form>
   );

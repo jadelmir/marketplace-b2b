@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MOCK_SUPPLIERS } from '../../data/mockSuppliers';
 
 const SupplierLoginPage: React.FC = () => {
@@ -157,12 +157,12 @@ const SupplierLoginPage: React.FC = () => {
         <div className="text-center">
           <p className="text-gray-600 text-sm">
             Are you a buyer?{' '}
-            <a
-              href="/buyer/login"
+            <Link
+              to="/buyer/login"
               className="text-indigo-600 hover:text-indigo-700 font-medium"
             >
               Go to buyer portal
-            </a>
+            </Link>
           </p>
         </div>
       </div>
